@@ -263,7 +263,12 @@ public class UsuariosDAO  implements OperacionesDAO {
 	 */
 	@Override
 	public void borrarTodo() {
-		instancia = null;
-	}
+        datosUsuarios = new ArrayList<Usuario>();
+        equivalenciasId = new Hashtable<String, String>();
+        try {
+			cargarPredeterminados();
+		} catch (ModeloException e) {
+		}
+    }
 
 } //class
